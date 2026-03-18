@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header class="header">
+      <h1>Task Manager</h1>
+      <p>Organize as suas tarefas de forma simples, rápida e eficiente.</p>
+    </header>
+
+    <section class="task-form-section">
+
+      <form id="taskForm" class="task-form">
+
+        <label for="taskInput" class="sr-only">Nova tarefa</label>
+
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Digite uma nova tarefa..."
+          required
+        />
+
+        <input
+          type="date"
+          id="taskDate"
+        />
+
+        <button type="submit">Adicionar</button>
+
+      </form>
+
+    </section>
+
+    <section class="task-info">
+
+      <p id="taskCounter">0 tarefas</p>
+
+      <div class="filters">
+        <button id="filterAll" class="active">Todas</button>
+        <button id="filterPending">Pendentes</button>
+        <button id="filterDone">Concluídas</button>
+      </div>
+
+    </section>
+
+    <section class="task-list-section">
+      <ul id="taskList" class="task-list"></ul>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
