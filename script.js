@@ -33,14 +33,22 @@ function renderTasks() {
   const filtered = getFilteredTasks();
 
   if (filtered.length === 0) {
-    taskList.innerHTML = `<li class="empty-state">Nenhuma tarefa encontrada</li>`;
+    taskList.innerHTML = `
+      <li class="empty-state">
+        Nenhuma tarefa encontrada. Comece adicionando uma nova 🚀
+      </li>
+    `;
     updateCounter();
     return;
   }
 
+  const today = new Date().toISOString().split("T")[0];
+
   filtered.forEach((task) => {
     const li = document.createElement("li");
     li.classList.add("task-item");
+
+    const isOverdue = task.deadline && task.deadline < today && !task.completed;
 
     li.innerHTML = `
       <div class="task-content">
@@ -69,7 +77,7 @@ function renderTasks() {
               `
           }
 
-          <small class="task-date">
+          <small class="task-date ${isOverdue ? "overdue" : ""}">
             Criado em: ${task.createdAt}
             ${task.deadline ? `<br>Prazo: ${task.deadline}` : ""}
           </small>
@@ -121,14 +129,16 @@ function toggleTask(id) {
   tasks = tasks.map((t) =>
     t.id === id ? { ...t, completed: !t.completed } : t,
   );
+
   saveTasks();
   renderTasks();
 }
 
 function deleteTask(id) {
-  if (!confirm("Deseja excluir esta tarefa?")) return;
+  if (!confirm("Tem certeza que deseja excluir esta tarefa?")) return;
 
   tasks = tasks.filter((t) => t.id !== id);
+
   saveTasks();
   renderTasks();
 }
@@ -138,6 +148,7 @@ function editTask(id) {
     ...t,
     editing: t.id === id,
   }));
+
   renderTasks();
 }
 
@@ -153,7 +164,11 @@ function saveEdit(id, value) {
 }
 
 function cancelEdit(id) {
-  tasks = tasks.map((t) => ({ ...t, editing: false }));
+  tasks = tasks.map((t) => ({
+    ...t,
+    editing: false,
+  }));
+
   renderTasks();
 }
 

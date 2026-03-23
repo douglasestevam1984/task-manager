@@ -1,13 +1,13 @@
 # 🧠 Task Manager
 
-Aplicação web para gestão de tarefas com foco em organização, produtividade e experiência do utilizador.
+Aplicação web para gestão de tarefas com foco em organização, produtividade e controlo de prazos.
 
 ---
 
 ## 🚀 Demonstração
 
-🔗 Acesse o projeto online:  
-https://github.com/douglasestevam1984/task-manager.git
+🔗 Projeto online:  
+https://douglasestevam1984.github.io/task-manager/
 
 💻 Repositório:  
 https://github.com/douglasestevam1984/task-manager
@@ -30,6 +30,7 @@ https://github.com/douglasestevam1984/task-manager
 ✔ Contador de tarefas  
 ✔ Data de criação automática  
 ✔ Definição de prazo (deadline)  
+✔ Destaque de tarefas atrasadas  
 ✔ Persistência de dados com LocalStorage
 
 ---
@@ -45,14 +46,14 @@ https://github.com/douglasestevam1984/task-manager
 
 ## 📚 Aprendizados
 
-Neste projeto foram aplicados conceitos importantes de frontend:
+Neste projeto foram aplicados conceitos fundamentais de desenvolvimento frontend:
 
 - Manipulação do DOM
 - Eventos e formulários
 - Estruturação de dados (arrays e objetos)
 - Métodos como `map`, `filter`
-- Persistência no navegador
-- Organização de código
+- Persistência de dados no navegador
+- Organização e separação de responsabilidades no código
 
 ---
 
@@ -62,15 +63,4 @@ Neste projeto foram aplicados conceitos importantes de frontend:
 
 ```bash
 git clone https://github.com/douglasestevam1984/task-manager.git
-
-👨‍💻 Autor
-
-Douglas Estevam
-📍 Porto, Portugal
-
-🔗 GitHub:
-https://github.com/douglasestevam1984
-
-🔗 LinkedIn:
-https://www.linkedin.com/in/douglasestevamdev/
 ```

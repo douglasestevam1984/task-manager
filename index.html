@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task Manager</title>
+
+  <title>Task Manager - Gestão de Tarefas</title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -14,7 +16,9 @@
 
     <header class="header">
       <h1>Task Manager</h1>
-      <p>Organize as suas tarefas de forma simples, rápida e eficiente.</p>
+      <p>
+        Aplicação para gestão de tarefas com controlo de prazos e aumento de produtividade.
+      </p>
     </header>
 
     <section class="task-form-section">
@@ -23,19 +27,23 @@
 
         <label for="taskInput" class="sr-only">Nova tarefa</label>
 
+      
         <input
           type="text"
           id="taskInput"
-          placeholder="Digite uma nova tarefa..."
+          placeholder="Ex: Estudar JavaScript às 14h"
           required
         />
 
         <input
           type="date"
           id="taskDate"
+          title="Definir prazo da tarefa"
         />
 
-        <button type="submit">Adicionar</button>
+        <button type="submit">
+          Adicionar
+        </button>
 
       </form>
 
